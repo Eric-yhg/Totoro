@@ -1,0 +1,32 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+    <h1 class="page-header">管理人员</h1>
+    <div class="bs-example" data-example-id="striped-table">
+            <div class="bars pull-left">
+               <a href="{% url 'User_add' %}" ><button class="btn btn-primary fa btn-label" style="margin-top: 10px;size:30px">添加用户</button></a>
+            </div>
+    </div>
+<div class="bs-example" data-example-id="striped-table">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>用户名</th>
+          <th>性别</th>
+          <th>职位</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+         {% for sa in sas %}
+             <tr>
+              <td>{{ sa.name }}</td>
+              <td>{{ sa.get_sex_display }}</td>
+              <td>{{ sa.get_jobs_display }}</td>
+                 <td><a href="{% url 'User_edit' sa.id %}"><button class="btn btn-primary fa btn-label" style="margin-top: 10px;size:30px">编辑</button></a>&nbsp;&nbsp;&nbsp;
+                 <a href="{% url 'User_del' sa.id%}"><button class="btn btn-danger fa del_asset" style="margin-top: 10px;size:30px">删除</button></a></td>
+              </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

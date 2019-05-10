@@ -1,0 +1,25 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+<body>
+    <h1>编辑用户</h1>
+    <form method="POST" action="/User_edit/{{obj.id}}/">{% csrf_token %}
+            <div>
+        <div><label>姓名</label></div>
+        <input type="text" name="name" value="{{obj.name}}" >
+        </div>
+          <div>
+         	<div><label>密码</label></div>
+         	<input type="password" name="passwd"  value="{{obj.get_password_display}}" >
+         </div> 
+         <div>
+         	<div><label>性别</label></div>
+         	<input type="text" name="sex"  value="{{obj.get_sex_display}}" >
+         </div> 
+         <div>
+         	<div><label>工作</label></div>
+         	<input type="text" name="jobs"  value="{{obj.get_jobs_display}}"  >
+         </div>
+             <input type='submit' value="保存" />
+    </form>
+</body>
+{% endblock %}

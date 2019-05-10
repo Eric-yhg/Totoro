@@ -1,0 +1,11 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+<h1>资产总览</h1>
+
+ <select class="form-control m-b" name="is_virtual">
+        {% for  is_virtual_i in is_virtual_list %}
+            <option>{{  is_virtual_i.get_is_virtual_display  }}</option>
+        {% endfor %}
+    <option>option 2</option>
+</select>
+{% endblock %}

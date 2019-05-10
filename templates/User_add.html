@@ -1,0 +1,27 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+<body>
+    <h1>添加用户</h1>
+    <form method="POST" action="/User_add/">{% csrf_token %}
+            <div>
+        <div><label>姓名</label></div>
+        <input type="text" name="name">
+        </div>
+         <div>
+         	<div><label>密码</label></div>
+         	<input type="password" name="passwd">
+         </div> 
+
+         <div>
+         	<div><label>性别</label></div>
+         	<input type="text" name="sex">
+         </div> 
+         <div>
+         	<div><label>工作</label></div>
+         	<input type="text" name="jobs">
+         </div>
+             <input type='submit' value="保存" />
+    </form>
+</body>
+{% endblock %}
+

@@ -1,0 +1,11 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+
+<h1 style="...">删除用户</h1>
+    <form action="/User_del/" method="post">{% csrf_token %}
+           <h5 >用户名</h5>
+          <input type="text" name="name"/>
+          <input class="btn btn-primary fa btn-label" type="submit" value="确认"/>
+    </form>
+{% endblock %}
+

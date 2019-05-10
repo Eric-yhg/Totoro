@@ -1,3 +1,3 @@
 ```
-This project is just for test!
+This project is just for great!
 ```

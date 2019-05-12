@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
-from cmdb import views
+from cmdb import views,api
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^dashboard/', views.dashboard, name='dashboard'),
     url(r'^index/', views.index, name='index'),
     url(r'^detail/(?P<asset_id>[0-9]+)/$', views.detail, name="detail"),
+    url('food/',api.inventory),        #添加api中inventory路由
     url(r'^$', views.index),
 
 ]

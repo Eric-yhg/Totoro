@@ -112,6 +112,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
+#增加一段REST_FRAMEWORK配置
+REST_FRAMEWORK = {
+  # Use Django's standard `django.contrib.auth` permissions,
+  # or allow read-only access for unauthenticated users.
+  'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+  ],
+  'DEFAULT_RENDERER_CLASSES': (
+    'rest_framework.renderers.JSONRenderer',
+  ),
+  'DEFAULT_PARSER_CLASSES': (
+    'rest_framework.parsers.JSONParser',
+  )
+}
+
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

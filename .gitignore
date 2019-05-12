@@ -3,5 +3,3 @@
 *.sqlite3
 .idea/
 *migrations*
-README.md
-*.txt

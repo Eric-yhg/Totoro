@@ -92,7 +92,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
+          <ul id=host-group class="treeview-menu">
             <li><a href="/dashboard/"><i class="fa fa-circle-o"></i>仪表盘</a></li>
             <li><a href="/index/"><i class="fa fa-circle-o"></i>资产总表</a></li>
           </ul>
@@ -147,6 +147,12 @@
 <script src="{% static '/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 
 {% block script %}{% endblock %}
+    <script type="text/javascript">
+
+    $(document).ready( function(){
+        $("#host-group a[href='{{ request.path }}']").parent().addClass("active")
+            });
+    </script>
 
 </body>
 
